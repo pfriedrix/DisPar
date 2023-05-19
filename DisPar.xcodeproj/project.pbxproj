@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		BA39F12029E7366F0014C880 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA39F11529E72A780014C880 /* main.swift */; };
+		BA7197CF2A16A77D0026B928 /* lab8.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7197CE2A16A77D0026B928 /* lab8.swift */; };
+		BA7197D32A16CFC80026B928 /* lab9.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7197D22A16CFC80026B928 /* lab9.swift */; };
+		BA8912AF29FF041B00BDE678 /* libSystem.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BA8912AE29FF041B00BDE678 /* libSystem.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +28,10 @@
 /* Begin PBXFileReference section */
 		BA39F11229E72A780014C880 /* DisPar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DisPar; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA39F11529E72A780014C880 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		BA7197CE2A16A77D0026B928 /* lab8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lab8.swift; sourceTree = "<group>"; };
+		BA7197D22A16CFC80026B928 /* lab9.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lab9.swift; sourceTree = "<group>"; };
+		BA8912AC29FF024800BDE678 /* libswiftDarwin.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftDarwin.tbd; path = usr/lib/swift/libswiftDarwin.tbd; sourceTree = SDKROOT; };
+		BA8912AE29FF041B00BDE678 /* libSystem.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libSystem.tbd; path = usr/lib/libSystem.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA8912AF29FF041B00BDE678 /* libSystem.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +51,7 @@
 			children = (
 				BA39F11429E72A780014C880 /* DisPar */,
 				BA39F11329E72A780014C880 /* Products */,
+				BA8912AB29FF024800BDE678 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,8 +67,27 @@
 			isa = PBXGroup;
 			children = (
 				BA39F11529E72A780014C880 /* main.swift */,
+				BA7197CD2A16A7700026B928 /* labs */,
 			);
 			path = DisPar;
+			sourceTree = "<group>";
+		};
+		BA7197CD2A16A7700026B928 /* labs */ = {
+			isa = PBXGroup;
+			children = (
+				BA7197CE2A16A77D0026B928 /* lab8.swift */,
+				BA7197D22A16CFC80026B928 /* lab9.swift */,
+			);
+			path = labs;
+			sourceTree = "<group>";
+		};
+		BA8912AB29FF024800BDE678 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BA8912AE29FF041B00BDE678 /* libSystem.tbd */,
+				BA8912AC29FF024800BDE678 /* libswiftDarwin.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,7 +148,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA7197CF2A16A77D0026B928 /* lab8.swift in Sources */,
 				BA39F12029E7366F0014C880 /* main.swift in Sources */,
+				BA7197D32A16CFC80026B928 /* lab9.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +275,11 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/swift",
+				);
+				OTHER_LDFLAGS = "-lSystem";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
@@ -256,6 +291,11 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/swift",
+				);
+				OTHER_LDFLAGS = "-lSystem";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};

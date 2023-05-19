@@ -138,14 +138,18 @@ dispatchGroup.wait()
 
 
 
-signal(SIGINT) { signal in
-    print("SIGINT received")
-    exit(0)
+func signals() {
+    signal(SIGINT) { signal in
+        print("SIGINT received")
+        exit(0)
+    }
+
+    while true {
+        print("processing")
+        sleep(1)
+    }
 }
 
-while true {
-    print("processing")
-    sleep(1)
-}
 
-
+performPipeCommunication()
+track()
